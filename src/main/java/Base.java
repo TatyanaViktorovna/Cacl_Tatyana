@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Scanner;
 public class Base {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        System.out.println("1 калькулятор , 2 Массив слов");
+        System.out.println("1 калькулятор , 2 Массив слов, 3 Массив цифр");
         int c = scn.nextInt();
         switch (c){
             case 1: {
@@ -49,7 +50,17 @@ public class Base {
                 System.out.println();
                 System.out.println("Самое длинное слово состоит из "+ max +" букв"); //Выводим на экран колво букв в самом длинном слове
                 break;}
+            case 3:
+                int chArray[];
+                chArray=new int[20];
+                for (int l= 0; l<chArray.length; l++) { //заполняем массив случайными цифрами
+                 chArray[l]= ((int)(Math.random()*20) - 10 );
                 }
+                System.out.print ("Исходный массив:");
+                for (int l= 0; l<chArray.length; l++) {
+                    System.out.print (" " + chArray[l]); // Выводим на экран массив
+                }
+                break;}
 
         scn.close();
     }
